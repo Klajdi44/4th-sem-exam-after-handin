@@ -1,0 +1,58 @@
+@use '../../../sass/variables.scss' as *;
+@use '../../../sass/mediaQueriesMixin.scss' as *;
+
+.company-headline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  background-color: #f3f4f6;
+  border-radius: $border-radius-m;
+  min-height: 100px;
+  height: auto;
+
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .desc {
+    display: flex;
+    flex-flow: column;
+    margin-left: 20px;
+    margin-right: 15px;
+
+    .name {
+      font-size: 20px;
+      font-weight: 500;
+      color: #4c4c4c;
+    }
+
+    .field {
+      font-size: 15px;
+      color: #707070;
+    }
+  }
+
+  .company-desc {
+    margin-left: auto;
+    max-width: 35%;
+  }
+
+  @media only screen and (max-width: 450px) {
+    height: auto;
+    flex-flow: column;
+
+    .desc {
+      margin-top: 10px;
+    }
+
+    .company-desc {
+      margin-left: 0;
+      max-width: 100%;
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

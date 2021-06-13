@@ -1,0 +1,109 @@
+@use '../../sass/variables.scss' as *;
+@use '../../sass/mediaQueriesMixin.scss' as *;
+
+.login_wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.login {
+  height: clamp(400px, 600px, 600px);
+  width: clamp(30%, 94%, 447px);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 32px;
+  margin: auto auto;
+  margin: 0.5em 0;
+  transform-style: preserve-3d;
+  animation: appear 1s ease;
+
+  label {
+    display: block;
+    font-weight: 900;
+  }
+  small {
+    opacity: 0.6;
+  }
+  &_header {
+    font-size: 2.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  &_error, &_msg {
+    min-height: 40px;
+    color: red;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: clamp(200px, 90%, 500px);
+    text-align: center;
+    transition: all 0.5s ease;
+    font-weight: 500;
+    background-color: #ff00001f;
+    border: 1px solid red;
+  }
+
+  &_msg {
+    color: #2e2e2e;
+    background-color: #f4d4d98a;
+    border: 1px solid #2e2e2e;
+  }
+
+  &_form {
+    width: clamp(260px, 90%, 370px);
+
+    &_email_div,
+    &_password_div {
+      margin: 1em 0;
+    }
+
+    &_email_div_input,
+    &_password_div_input {
+      width: 100%;
+      border-radius: 23px;
+      padding: 1.3em;
+      border: 1px solid transparent;
+      margin: 0.5em 0;
+      background: $body-bg-color;
+      &:valid:not(:placeholder-shown):not(focus) {
+        border: 1px solid $accent-color;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    &_account_message {
+      text-align: center;
+      color: #b2b2b2;
+
+      >a {
+        color: rgb(101, 101, 231);
+        text-decoration: none;
+      }
+    }
+    &_button {
+      width: 100%;
+      border: 1px solid transparent;
+      padding: 15px 30px;
+      border-radius: 23px;
+      margin-top: 6em;
+      background: $accent-color;
+      transition: all 0.3s ease ;
+
+      &:hover {
+        background-color: white;
+        border: 1px solid $accent-color;
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    transform: perspective(500px) rotateY(180deg);
+  }
+}

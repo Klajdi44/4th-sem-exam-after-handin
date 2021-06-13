@@ -1,0 +1,125 @@
+@use '../../sass/mediaQueriesMixin.scss' as *;
+@use '../../sass/variables.scss' as *;
+
+.chat_card_wrapper {
+  background: #fff;
+  padding: 1em;
+  margin-top: 1em;
+  border-radius: $border-radius-s;
+  @include mediaQuery(tablet) {
+    height: 95vh;
+    overflow-y: scroll;
+  }
+  @include mediaQuery(laptop) {
+    grid-column: 1/9;
+    position: static;
+    height: 85vh;
+  }
+}
+.chat_card {
+  list-style: none;
+  margin: 2em 0;
+  position: relative;
+
+  .dots {
+    transform: rotate(90deg);
+    font-weight: 900;
+    margin-left: 0.3em;
+    cursor: pointer;
+  }
+
+  .delete_box {
+    animation: slide 0.3s ease-in;
+    button {
+      margin-bottom: 0;
+      color: red;
+      border: 1px solid red;
+      padding: 5px 10px;
+      font-size: 0.8em;
+      background: #fff;
+    }
+  }
+  &:last-child {
+    margin-bottom: 5em;
+  }
+  &_item {
+    &:last-child {
+      margin-bottom: 4em;
+    }
+
+    @include mediaQuery(tablet) {
+      &:last-child {
+        margin-bottom: 2em;
+      }
+    }
+    .name {
+      margin: 0.2em 0;
+      margin-left: 67px;
+    }
+    .time {
+      color: $faded-color;
+      font-size: 0.7em;
+      margin-left: 67px;
+      @include mediaQuery(tablet) {
+      }
+    }
+    .main_chat {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      width: 100%;
+      font-size: 0.85em;
+
+      @include mediaQuery(tablet) {
+        font-size: 1em;
+      }
+
+      &_text {
+        border-radius: $border-radius-m;
+        background: #f2f2f2f8;
+        padding: 7px 30px;
+      }
+
+      &_img {
+        object-fit: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+    a {
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .currentUser {
+    .time {
+      text-align: end;
+      margin-right: 80px;
+    }
+    .main_chat {
+      flex-direction: row;
+      &_text {
+        background: $accent-color;
+      }
+    }
+
+    .name {
+      text-align: end;
+      margin-right: 80px;
+    }
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}

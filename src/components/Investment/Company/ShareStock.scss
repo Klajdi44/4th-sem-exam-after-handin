@@ -1,0 +1,48 @@
+@use '../../../sass/variables.scss' as *;
+
+.share-stock {
+  position: relative;
+  margin-top: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .share-stock-text {
+    border-radius: $border-radius-m;
+    padding: 15px;
+    width: 100%;
+    min-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 100%;
+    max-width: 100%;
+    border: 2px solid $accent-color;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $accent-color-lighter;
+    }
+  }
+
+  @media (max-width: 450px) {
+    min-width: 80%;
+  }
+}
+
+.text-loading {
+  background-color: rgb(241, 241, 241);
+}
+
+.sharing-loading {
+  position: absolute;
+  z-index: 99999;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  margin: auto;
+  width: 150px;
+
+  #circle {
+    fill: $accent-color;
+  }
+}

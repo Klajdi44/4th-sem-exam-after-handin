@@ -1,0 +1,109 @@
+@use '../../sass/variables.scss' as *;
+@use '../../sass/mediaQueriesMixin.scss' as *;
+
+.post {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+  border-radius: $border-radius-s;
+  padding: 20px;
+  margin-bottom: 1.5em;
+  grid-row-end: span 2;
+
+  @include mediaQuery(tablet) {
+    width: 60%;
+  }
+
+  .post-content {
+    margin: 10px 0;
+    font-size: 0.85em;
+    line-height: 150%;
+
+    .companyInfo {
+      font-weight: 600;
+    }
+
+    @include mediaQuery(tablet) {
+      font-size: 1em;
+    }
+  }
+
+  .post-img {
+    height: 300px;
+    margin: 10px;
+    align-self: center;
+    width: 100%;
+    object-fit: contain;
+  }
+  hr {
+    width: 100%;
+    align-self: center;
+    border: 1px solid $accent-color;
+    border-radius: $border-radius-s;
+  }
+  .bottom-div {
+    padding-top: 1em;
+    margin-top: auto;
+    .no_comments {
+      display: block;
+      color: #454545;
+      text-align: center;
+    }
+    &_comments_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &_title {
+        display: flex;
+        font-weight: 900;
+        align-items: center;
+
+        svg {
+          height: 15px;
+          margin-left: 3px;
+        }
+      }
+    }
+
+    .load-more {
+      cursor: pointer;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 600;
+      color: $faded-color;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      input {
+        width: calc(100% - 100px);
+        margin-top: 1em;
+        padding: 0.7em;
+        border-radius: $border-radius-m;
+        border: 1px solid gray;
+        &:focus {
+          outline: none;
+        }
+      }
+      .input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        button {
+          margin-top: 1em;
+        }
+      }
+    }
+
+    .primary-btn {
+      padding: 5px 15px;
+      margin: 0;
+    }
+  }
+}
+
+.with-img {
+  grid-row-end: span 5;
+}
