@@ -5,6 +5,7 @@ function UserButton(props: any) {
     <div className={`user-btn ${props.className}`}>
       <img
         className='user-img'
+        loading="lazy" 
         src={
           props.userImg
             ? props.userImg
