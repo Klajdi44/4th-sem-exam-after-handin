@@ -27,6 +27,7 @@ function App() {
           <PrivateRoute exact path='/profile/:id' component={UserProfile} />
           <Route path='/login' component={LogIn} />
           <Route path='/signup' component={SignUp} />
+          <Route path='/robots.txt'/>
           <Route path='*' component={NotFound} />
         </Switch>
       </div>
